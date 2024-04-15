@@ -19,14 +19,14 @@ import os
 #         time.sleep(0.05)
 
 def make_api_call(query):
-    response = requests.get("http://localhost:8000/query", params={"query": query})
+    response = requests.get("https://resume.translatetracks.com/query", params={"query": query})
     return response.json()["response"], response.json()["images"]
 
 
 
 
 
-st.title("Simple Chat")
+st.title("Resume RAG")
 
 # Initialize chat history
 if "messages" not in st.session_state:
@@ -40,6 +40,8 @@ if "messages" not in st.session_state:
                                   2. Comprehensive questions that involve pulling data from multiple indexes may take longer to respond.
 
                                   What do you want to know about Jasdeep?
+                                  Hint: You can ask any question related to Jasdeep's career. Example - "Does Jasdeep has experience in SQL?","Can you give examples where Jasdeep has used SQL?"
+                                  or more specific to projects like "What is the stack used in TranslateTracks?" etc. 
                                   """, "images":[]}]
 
 # Display chat messages from history on app rerun
