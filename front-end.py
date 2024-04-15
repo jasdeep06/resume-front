@@ -30,7 +30,17 @@ st.title("Simple Chat")
 
 # Initialize chat history
 if "messages" not in st.session_state:
-    st.session_state.messages = [{"role":"assistant", "content":"This RAG is indexed with information", "images":[]}]
+    st.session_state.messages = [{"role":"assistant", "content":"""
+                                  This is a comprehensive RAG built upon top of Jasdeep Singh Chhabra's resume.
+                                  The data sources include his resume, 8 multimodal blog post written by him on his blog https://jasdeep06.github.io/,
+                                  2 Multimodal reports written by him detailing his technical experience in the two startups he cofounded namely
+                                  Vinglabs(https://alpla.netlify.app) and TranslateTracks(https://translatetracks.netlify.app).
+                                  Few things that should be kept in mind - 
+                                  1. Due to resource contraints, each query is independent and does not take into account the context of the previous queries.
+                                  2. Comprehensive questions that involve pulling data from multiple indexes may take longer to respond.
+
+                                  What do you want to know about Jasdeep?
+                                  """, "images":[]}]
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
